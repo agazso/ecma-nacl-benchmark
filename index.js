@@ -23,8 +23,8 @@ const randomBytes = hexToUint8Array(
 );
 
 const num = parseNumber(process.argv[2]);
-const startDate = Date.now();
 const encryptor = nacl.secret_box.formatWN.makeEncryptor(secretBytes, randomBytes);
+const startDate = Date.now();
 for (let i = 0; i < num; i++) {
     valueBytes = encryptor.pack(valueBytes);
 }
